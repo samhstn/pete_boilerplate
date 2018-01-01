@@ -14,7 +14,7 @@ I use sass as I'm a fan of short modularized css files and sass variables
 
 I use rollup as it's in my favorite javascript bundler
 
-I like to keep a terminal open and wathcing for changes for each of my sass, js and elm files
+I like to keep a terminal open and watch for changes for each of my sass, js and elm files individually
 
 # How
 
