@@ -22,8 +22,20 @@ I like to keep a terminal open and wathcing for changes for each of my sass, js 
 git clone https://github.com/shouston3/pete_boilerplate.git && cd pete_boilerplate
 ```
 
+# Quick start
+
+```bash
+mix ecto.create
+
+cd assets && npm run build && cd -
+
+mix phx.start
+```
+
+# Rename project
+
 rename pete to your project name by following this gist:
 
 https://gist.github.com/nerdyworm/3d623b13bf0d6d664373e2f501f16423
 
-If on osx, you can install awk with `brew install awk`
+If on osx, you can install `awk` with `brew install awk`
