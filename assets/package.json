@@ -1,18 +1,25 @@
 {
+  "description": "pete boilerplate",
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "deploy": "brunch build --production",
-    "watch": "brunch watch --stdin"
+    "build": "npm run build:js && npm run build:elm && npm run build:css && npm run build:static",
+    "build:js": "rollup -c rollup.config.js",
+    "build:elm": "elm-make elm/Home.elm --output ../priv/static/js/elm.js --yes",
+    "build:css": "sass css/main.scss:../priv/static/css/app.css",
+    "build:static": "cp -R static/* ../priv/static",
+    "build:watch": "nodemon -x 'npm run build' -e js,elm,css,png,svg",
+    "build:js:watch": "rollup -c rollup.config.js -w",
+    "build:elm:watch": "elm-live elm/Main.elm --pushstate --output=../priv/static/js/elm.js",
+    "build:css:watch": "sass --watch css/main.scss:../priv/static/css/app.css",
+    "build:static:watch": "nodemon -e png,svg -x 'npm run build:static' -w static"
   },
   "dependencies": {
-    "phoenix": "file:../deps/phoenix",
-    "phoenix_html": "file:../deps/phoenix_html"
+    "rollup": "^0.53.2",
+    "tachyons-sass": "^4.9.2"
   },
   "devDependencies": {
-    "babel-brunch": "6.1.1",
-    "brunch": "2.10.9",
-    "clean-css-brunch": "2.10.0",
-    "uglify-js-brunch": "2.10.0"
+    "elm-live": "^2.7.5",
+    "nodemon": "^1.14.7"
   }
 }
