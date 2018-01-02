@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/shouston3/pete_boilerplate.svg?branch=master)](https://travis-ci.org/shouston3/pete_boilerplate)
+[![codecov](https://codecov.io/gh/shouston3/pete_boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shouston3/pete_boilerplate)
+
+Hosted here: https://sams-pete-boilerplate.herokuapp.com/
+
 # Pete
 
 # What and Why
@@ -92,3 +97,5 @@ Simply go to `https://travis-ci.org/<your-org/username>/<your-project>`
 Click activate repository
 
 The next push should be integrated with travis
+
+Same goes for coveralls
