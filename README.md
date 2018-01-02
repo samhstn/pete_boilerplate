@@ -39,3 +39,40 @@ rename pete to your project name by following this gist:
 https://gist.github.com/nerdyworm/3d623b13bf0d6d664373e2f501f16423
 
 If on osx, you can install `awk` with `brew install awk`
+
+# Heroku
+
+Set up a new project and add the remote.
+
+Something like:
+
+```bash
+heroku git:remote -a pete-boilerplate
+```
+
+For information on each of these steps see the Phoenix deployment guide:
+
+https://hexdocs.pm/phoenix/heroku.html
+
+Most of the steps from the deployment guide have already been managed though.
+
+You will still need to set up postgres, some buildpacks and a couple of environment variables.
+
+Run each of these lines indivudually and ensure it was configured correctly
+
+```bash
+heroku buildpacks:add "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+heroku buildpacks:add "https://github.com/heroku/heroku-buildpack-ruby.git"
+heroku buildpacks:add "https://github.com/heroku/heroku-buildpack-nodejs.git"
+heroku addons:create heroku-postgresql:hobby-dev
+heroku config:set POOL_SIZE=18
+heroku config:set SECRET_KEY_BASE="$(mix phx.gen.secret)"
+```
+
+You will also need to change the line in `config/prod.exs` specifying host from `pete-boilerplate.herokuapp.com` to your hostname
+
+Now push to heroku, if you need to push an empty commit, this may come in handy:
+
+```bash
+git commit --allow-empty -m "empty" && git push heroku master
+```
