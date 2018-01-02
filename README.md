@@ -60,6 +60,10 @@ You will still need to set up postgres, some buildpacks and a couple of environm
 
 Run each of these lines indivudually and ensure it was configured correctly
 
+Ensure the order of the buildpacks is exactly in the order below
+
+The order of your buildpacks can be checked with `heroku buildpacks`
+
 ```bash
 heroku buildpacks:add "https://github.com/HashNuke/heroku-buildpack-elixir.git"
 heroku buildpacks:add "https://github.com/heroku/heroku-buildpack-ruby.git"
