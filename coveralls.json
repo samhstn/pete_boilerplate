@@ -1,0 +1,15 @@
+{
+  "skip_files": [
+    "lib/pete.ex",
+    "lib/pete_web.ex",
+    "lib/pete/application.ex",
+    "lib/pete/repo.ex",
+    "lib/pete_web.ex",
+    "lib/pete_web/endpoint.ex",
+    "lib/pete_web/gettext.ex",
+    "lib/pete_web/router.ex",
+    "lib/pete_web/channels/user_socket.ex",
+    "lib/pete_web/views/error_helpers.ex",
+    "test/support"
+  ]
+}

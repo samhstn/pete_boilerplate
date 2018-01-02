@@ -84,3 +84,11 @@ Now push to heroku, if you need to push an empty commit, this may come in handy:
 ```bash
 git commit --allow-empty -m "empty" && git push heroku master
 ```
+
+# Travis
+
+Simply go to `https://travis-ci.org/<your-org/username>/<your-project>`
+
+Click activate repository
+
+The next push should be integrated with travis
