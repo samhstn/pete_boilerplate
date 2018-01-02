@@ -1,25 +1,22 @@
 {
-  "description": "pete boilerplate",
+  "name": "assets",
+  "desciption": "hello",
   "repository": {},
-  "license": "MIT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "npm run build:js && npm run build:elm && npm run build:css && npm run build:static",
-    "build:js": "rollup -c rollup.config.js",
-    "build:elm": "elm-make elm/Home.elm --output ../priv/static/js/elm.js --yes",
+    "postinstall": "npm run build",
+    "build": "cp -R static/* ../priv/static/ && npm run build:css && npm run build:js && npm run build:elm",
     "build:css": "sass css/main.scss:../priv/static/css/app.css",
-    "build:static": "cp -R static/* ../priv/static",
-    "build:watch": "nodemon -x 'npm run build' -e js,elm,css,png,svg",
-    "build:js:watch": "rollup -c rollup.config.js -w",
-    "build:elm:watch": "elm-live elm/Main.elm --pushstate --output=../priv/static/js/elm.js",
-    "build:css:watch": "sass --watch css/main.scss:../priv/static/css/app.css",
-    "build:static:watch": "nodemon -e png,svg -x 'npm run build:static' -w static"
+    "build:js": "rollup -c rollup.config.js",
+    "build:elm": "elm make elm/Home.elm --output ../priv/static/js/elm.js --yes"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "rollup": "^0.53.2",
-    "tachyons-sass": "^4.9.2"
-  },
-  "devDependencies": {
-    "elm-live": "^2.7.5",
-    "nodemon": "^1.14.7"
+    "elm": "^0.18.0",
+    "rollup": "^0.53.3"
   }
 }

@@ -36,7 +36,7 @@ defmodule PeteWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_pete_key",
-    signing_salt: "PCbeo55X"
+    signing_salt: "KhSm+uc0"
 
   plug PeteWeb.Router
 
