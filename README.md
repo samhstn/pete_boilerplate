@@ -25,6 +25,8 @@ git clone https://github.com/shouston3/pete_boilerplate.git && cd pete_boilerpla
 # Quick start
 
 ```bash
+mix deps.get
+
 mix ecto.create
 
 cd assets && npm run build && cd -
@@ -39,6 +41,8 @@ rename pete to your project name by following this gist:
 https://gist.github.com/nerdyworm/3d623b13bf0d6d664373e2f501f16423
 
 If on osx, you can install `awk` with `brew install awk`
+
+There is a `rename.sh` file in the root for you to run
 
 # Heroku
 
