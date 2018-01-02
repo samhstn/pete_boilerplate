@@ -1,0 +1,6 @@
+{
+  "_why": "https://github.com/heroku/heroku-buildpack-nodejs/issues/221#issuecomment-95680863",
+  "scripts": {
+    "postinstall": "gem install sass && cd assets && npm install"
+  }
+}
