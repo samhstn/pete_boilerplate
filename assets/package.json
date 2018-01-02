@@ -1,25 +1,23 @@
 {
-  "name": "pete boilerplate",
+  "name": "pete_boilerplate",
   "desciption": "hello",
   "repository": {},
-  "license": "MIT",
+  "license": "ISC",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "postinstall": "npm run build",
     "build": "npm run build:static && npm run build:css && npm run build:js && npm run build:elm",
-    "build:static": "cp -R static/* ../priv/static/ ",
+    "build:static": "cp -R static/* ../priv/static/",
     "build:css": "sass css/main.scss:../priv/static/css/app.css",
     "build:js": "rollup -c rollup.config.js",
     "build:elm": "elm make elm/Home.elm --output ../priv/static/js/elm.js --yes",
-
     "build:js:watch": "rollup -c rollup.config.js -w",
     "build:elm:watch": "elm-live elm/Home.elm --output ../priv/static/js/elm.js --yes"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "elm": "^0.18.0",
     "rollup": "^0.53.3"
