@@ -5,19 +5,23 @@ defmodule Pete.User do
 
   schema "users" do
     field :email, :string
+    field :name, :string
+    field :password, :string, virtual: true
     field :password_hash, :string
 
-    has_many :todo, Pete.Todo
-    has_many :counter, Pete.Counter
+    has_many :todo, Todo
+    has_many :counter, Counter
 
     timestamps()
   end
 
   @doc false
+  @required_fields ~w(email)a
+  @optional_filds ~w(name)a
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:email, :password_hash])
-    |> validate_required([:email, :password_hash])
+    |> cast(attrs, @required_fields ++ @optional_filds)
+    |> validate_required(@required_fields)
     |> unique_constraint(:email)
   end
 end

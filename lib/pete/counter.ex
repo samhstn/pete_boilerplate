@@ -17,5 +17,6 @@ defmodule Pete.Counter do
     counter
     |> cast(attrs, [:count])
     |> validate_required([:count])
+    |> assoc_constraint(:user)
   end
 end

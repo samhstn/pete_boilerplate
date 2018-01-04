@@ -17,5 +17,6 @@ defmodule Pete.Todo do
     todo
     |> cast(attrs, [:name, :state])
     |> validate_required([:name, :state])
+    |> assoc_constraint(:user)
   end
 end
