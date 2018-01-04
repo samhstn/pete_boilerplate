@@ -18,7 +18,7 @@ defmodule Pete.User do
   @doc false
   @required_fields ~w(email)a
   @optional_filds ~w(name)a
-  def changeset(%User{} = user, attrs) do
+  def changeset(%User{} = user, attrs \\ %{}) do
     user
     |> cast(attrs, @required_fields ++ @optional_filds)
     |> validate_required(@required_fields)
