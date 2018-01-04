@@ -13,8 +13,10 @@
     "build:css": "sass css/main.scss:../priv/static/css/app.css",
     "build:js": "rollup -c rollup.config.js",
     "build:elm": "./elm.build.sh",
-    "build:js:watch": "rollup -c rollup.config.js -w",
-    "build:elm:watch": "elm-live elm/Home.elm --output ../priv/static/js/elm.js --yes",
+    "watch:static": "nodemon -e txt,ico,png,svg -x 'npm run build:static'",
+    "watch:css": "sass css/main.scss:../priv/static/css/app.css -w",
+    "watch:js": "rollup -c rollup.config.js -w",
+    "watch:elm": "elm-live elm/Home.elm --output ../priv/static/js/elm.js --yes",
     "test": "echo \"no tests yet!\""
   },
   "keywords": [],
