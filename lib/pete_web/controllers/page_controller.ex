@@ -1,4 +1,4 @@
-defmodule PeteWeb.HomeController do
+defmodule PeteWeb.PageController do
   use PeteWeb, :controller
 
   def index(conn, _params) do
