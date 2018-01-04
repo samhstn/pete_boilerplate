@@ -1,8 +1,8 @@
-defmodule Pete.Repo.Migrations.CreateAppTodos do
+defmodule Pete.Repo.Migrations.CreateTodos do
   use Ecto.Migration
 
   def change do
-    create table(:app_todos) do
+    create table(:todos) do
       add :name, :string
       add :state, :integer
       add :user_id, references(:users, on_delete: :nothing)
@@ -10,6 +10,6 @@ defmodule Pete.Repo.Migrations.CreateAppTodos do
       timestamps()
     end
 
-    create index(:app_todos, [:user_id])
+    create index(:todos, [:user_id])
   end
 end

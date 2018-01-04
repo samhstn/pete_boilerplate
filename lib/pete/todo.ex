@@ -1,13 +1,13 @@
-defmodule Pete.Schema.Todo do
+defmodule Pete.Todo do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Pete.Schema.Todo
+  alias Pete.{Todo, User}
 
-
-  schema "app_todos" do
+  schema "todos" do
     field :name, :string
     field :state, :integer
-    field :user_id, :id
+
+    belongs_to :user, User
 
     timestamps()
   end
