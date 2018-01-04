@@ -46,7 +46,10 @@ defmodule Pete.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:credo, "~> 0.8.10"},
-      {:excoveralls, "~> 0.8.0"}
+      {:excoveralls, "~> 0.8.0"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 0.12"},
+      {:guardian, "~> 1.0"}
     ]
   end
 
