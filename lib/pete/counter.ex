@@ -13,7 +13,7 @@ defmodule Pete.Counter do
   end
 
   @doc false
-  def changeset(%Counter{} = counter, attrs) do
+  def changeset(%Counter{} = counter, attrs \\ %{}) do
     counter
     |> cast(attrs, [:count])
     |> validate_required([:count])

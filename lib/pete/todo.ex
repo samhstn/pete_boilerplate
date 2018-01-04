@@ -13,7 +13,7 @@ defmodule Pete.Todo do
   end
 
   @doc false
-  def changeset(%Todo{} = todo, attrs) do
+  def changeset(%Todo{} = todo, attrs \\ %{}) do
     todo
     |> cast(attrs, [:name, :state])
     |> validate_required([:name, :state])

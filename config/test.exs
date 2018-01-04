@@ -17,3 +17,5 @@ config :pete, Pete.Repo,
   database: "pete_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :bcrypt_elixir, log_rounds: 4

@@ -18,6 +18,7 @@ defmodule PeteWeb.Router do
 
     get "/", PageController, :index
     resources "/users", UserController, only: [:new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.
