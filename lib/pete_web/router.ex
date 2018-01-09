@@ -13,14 +13,20 @@ defmodule PeteWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PeteWeb do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
+  pipeline :with_session do
+    plug Pete.Auth.Pipeline
+    plug Pete.Auth.CurrentUser
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PeteWeb do
-  #   pipe_through :api
-  # end
+  pipeline :login_required do
+    plug Guardian.Plug.EnsureAuthenticated
+  end
+
+  scope "/", PeteWeb do
+    pipe_through [:browser, :with_session]
+
+    get "/", PageController, :index
+    resources "/users", UserController, only: [:new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+  end
 end
