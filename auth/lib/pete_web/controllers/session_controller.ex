@@ -25,7 +25,6 @@ defmodule PeteWeb.SessionController do
   end
 
   def delete(conn, _) do
-    IO.puts "DELETTTTT"
     conn
     |> Auth.logout
     |> put_flash(:info, "See you later!")

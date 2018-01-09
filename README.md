@@ -9,7 +9,7 @@ Each boilerplate is set up with:
 auth implemented with guardian
 allows for user creation, logging in and logging out
 
-### admin_auth (coming soon)
+### admin_auth
 
 same as simple_auth, but with an admin role
 
