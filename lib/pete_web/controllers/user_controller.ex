@@ -1,7 +1,7 @@
 defmodule PeteWeb.UserController do
   use PeteWeb, :controller
 
-  alias Pete.User
+  alias Pete.{User, Auth}
 
   plug :scrub_params, "user" when action in [:create]
 
@@ -17,8 +17,9 @@ defmodule PeteWeb.UserController do
     case Repo.insert(changeset) do
       {:ok, user} ->
         conn
+        |> Auth.login(user)
         |> put_flash(:info, "#{user.name} created!")
-        |> redirect(to: user_path(conn, :show, user))
+        |> redirect(to: user_path(conn, :new))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

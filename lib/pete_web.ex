@@ -23,6 +23,7 @@ defmodule PeteWeb do
       import Plug.Conn
       import PeteWeb.Router.Helpers
       import PeteWeb.Gettext
+      alias Pete.Repo
     end
   end
 

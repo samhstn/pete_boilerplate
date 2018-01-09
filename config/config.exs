@@ -22,6 +22,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :pete, Pete.Auth.Guardian,
+  issuer: "pete",
+  ttl: {30, :days},
+  verify_issuer: true,
+  secret_key: "Q7lyoiGi9jYqFzJMREG+KyAyiVZWnjADHJM5Rxo88spSnLlO/JFEE08qMz8Fx8g0"
+
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
