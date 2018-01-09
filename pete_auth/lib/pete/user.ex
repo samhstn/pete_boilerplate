@@ -29,9 +29,7 @@ defmodule Pete.User do
     |> hash_password
   end
 
-  require IEx
   defp hash_password(changeset) do
-    IEx.pry
     case changeset do
       %Ecto.Changeset{valid?: true,
                       changes: %{password: password}} ->

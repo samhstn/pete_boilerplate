@@ -41,6 +41,7 @@ defmodule PeteWeb do
       import PeteWeb.Router.Helpers
       import PeteWeb.ErrorHelpers
       import PeteWeb.Gettext
+      import PeteWeb.ViewHelpers
     end
   end
 
