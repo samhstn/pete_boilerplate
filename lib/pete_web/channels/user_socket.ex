@@ -5,8 +5,7 @@ defmodule PeteWeb.UserSocket do
   # channel "room:*", PeteWeb.RoomChannel
 
   ## Transports
-  transport :websocket, Phoenix.Transports.WebSocket,
-    timeout: 45_000
+  transport :websocket, Phoenix.Transports.WebSocket
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can

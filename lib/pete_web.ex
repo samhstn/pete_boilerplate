@@ -23,7 +23,6 @@ defmodule PeteWeb do
       import Plug.Conn
       import PeteWeb.Router.Helpers
       import PeteWeb.Gettext
-      alias Pete.Repo
     end
   end
 
@@ -41,7 +40,6 @@ defmodule PeteWeb do
       import PeteWeb.Router.Helpers
       import PeteWeb.ErrorHelpers
       import PeteWeb.Gettext
-      import PeteWeb.ViewHelpers
     end
   end
 

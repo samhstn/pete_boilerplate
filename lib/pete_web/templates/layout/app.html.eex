@@ -16,23 +16,10 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <%= if @current_user do %>
-              <li>
-                <%= @current_user.email %> (<%= @current_user.id %>)
-              </li>
-              <li>
-                <%= link "Sign out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
-              </li>
-            <% else %>
-              <li>
-                <%= link "Register", to: user_path(@conn, :new) %>
-              </li>
-              <li>
-                <%= link "Sign in", to: session_path(@conn, :new) %>
-              </li>
-            <% end %>
+            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
           </ul>
         </nav>
+        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -43,13 +30,6 @@
       </main>
 
     </div> <!-- /container -->
-
-    <script>
-      var csrfToken = "<%= Phoenix.Controller.get_csrf_token() %>";
-    </script>
-
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/elm.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/#{js_file @conn}") %>"></script>
   </body>
 </html>

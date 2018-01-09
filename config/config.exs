@@ -12,7 +12,7 @@ config :pete,
 # Configures the endpoint
 config :pete, PeteWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "76mAccIQnnHWGkPX6OJbCfYp0sIT+Pp/Na/soTZ+slzkOu/Y88gCcODBWKAO4zlH",
+  secret_key_base: "M5MCu+3aSIOlFUiMF4pPNpZsbfcwYVsx3kTuLfUn4MDAqrSNjQ6nmpx8eMWaAt9N",
   render_errors: [view: PeteWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Pete.PubSub,
            adapter: Phoenix.PubSub.PG2]
@@ -21,13 +21,6 @@ config :pete, PeteWeb.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
-
-config :pete, Pete.Auth.Guardian,
-  issuer: "pete",
-  ttl: {30, :days},
-  verify_issuer: true,
-  secret_key: "Q7lyoiGi9jYqFzJMREG+KyAyiVZWnjADHJM5Rxo88spSnLlO/JFEE08qMz8Fx8g0"
-
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
