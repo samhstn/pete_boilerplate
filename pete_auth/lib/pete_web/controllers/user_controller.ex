@@ -4,6 +4,7 @@ defmodule PeteWeb.UserController do
   alias Pete.{User, Auth}
 
   plug :scrub_params, "user" when action in [:create]
+  plug :put_layout, "login.html" when action in ~w(new)a
 
   def new(conn, _params) do
     changeset = User.changeset(%User{})

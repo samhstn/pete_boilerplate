@@ -4,6 +4,7 @@ defmodule PeteWeb.SessionController do
   alias Pete.Auth
 
   plug :scrub_params, "session" when action in ~w(create)a
+  plug :put_layout, "login.html" when action in ~w(new)a
 
   def new(conn, _) do
     render conn, "new.html"
