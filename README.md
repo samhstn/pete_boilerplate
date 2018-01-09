@@ -13,7 +13,7 @@ allows for user creation, logging in and logging out
 
 same as simple_auth, but with an admin role
 
-### pete_auth (coming soon)
+### pete_auth
 
 same as simple_auth, but the views after login use the pete stack
 (includes sass)
