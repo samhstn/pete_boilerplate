@@ -2,11 +2,14 @@
 
 set -e
 
+if [[ $NEW_NAME = "" ]] || [[ $NEW_OPT = "" ]];then
+  echo "please run this commad with NEW_NAME and NEW_OPT vars"
+  echo "for example, for the new name of MyApp, you would run:"
+  echo "NEW_NAME=MyApp NEW_OPT=my_app ./rename"
+fi
+
 CURRENT_NAME="Pete"
 CURRENT_OTP="pete"
-
-NEW_NAME="NewName"
-NEW_OTP="new_name"
 
 ack -l $CURRENT_NAME | xargs sed -i '' -e "s/$CURRENT_NAME/$NEW_NAME/g"
 ack -l $CURRENT_OTP | xargs sed -i '' -e "s/$CURRENT_OTP/$NEW_OTP/g"
