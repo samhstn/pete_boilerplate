@@ -4,6 +4,22 @@ Each boilerplate is set up with:
 + Tests hosted on travis
 + Site hosted on heroku
 
+### Quick Start
+
+Clone this repo:
+
+```sh
+git clone https://github.com/shouston3/pete_boilerplate.git && cd pete_boilerplate
+```
+
+Choose which boilerplate you would like.
+
+Options are below. For instance to select `admin_auth`, run:
+
+```sh
+./select admin_auth
+```
+
 ### auth
 
 auth implemented with guardian
