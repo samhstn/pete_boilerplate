@@ -7,6 +7,12 @@ if [ -d "$HOME/pete_boilerplate_tmp" ];then
   exit 1
 fi
 
+if [[ $1 = "" ]] || [[ $1 = "help" ]];then
+  echo $'available boilerplates are:\nauth\nadmin_auth\npete_auth'
+  echo 'for example you could run: ./select auth'
+  exit 0
+fi
+
 PETE_BOILERPLATE_CURRENT_DIR="$(pwd)"
 
 if [ -d "$PETE_BOILERPLATE_CURRENT_DIR/../$1" ];then
@@ -15,9 +21,7 @@ if [ -d "$PETE_BOILERPLATE_CURRENT_DIR/../$1" ];then
   exit 1
 fi
 
-if [[ $1 = "" ]] || [[ $1 = "help" ]];then
-  echo $'available boilerplates are:\nauth\nadmin_auth\npete_auth'
-elif [[ $1 = "auth" ]] || [[ $1 = "admin_auth" ]] || [[ $1 = "pete_auth" ]]; then
+if [[ $1 = "auth" ]] || [[ $1 = "admin_auth" ]] || [[ $1 = "pete_auth" ]]; then
   echo "You've selected boilerplate: $1"
   mkdir -p "$HOME/pete_boilerplate_tmp"
   mv "$1" "$HOME/pete_boilerplate_tmp/$1"
