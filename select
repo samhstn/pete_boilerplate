@@ -31,6 +31,11 @@ if [[ $1 = "auth" ]] || [[ $1 = "admin_auth" ]] || [[ $1 = "pete_auth" ]]; then
   rm -rf "$HOME/pete_boilerplate_tmp"
   cd "$1"
   echo "configured boilerplate: $1"
+  echo "please cd into the boilerplate by running:"
+  echo "You can rename your project by folling the ./rename command"
+
+  echo $'But first, please cd into your new boilerplate with the following command:\n'
+  echo "cd $(echo $PETE_BOILERPLATE_CURRENT_DIR | sed 's/pete_boilerplate$//g')$1"
 else
   echo "Unknown command; please run ./select help for more info"
 fi
