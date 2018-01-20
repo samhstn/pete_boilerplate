@@ -25,6 +25,7 @@ if [[ $1 = "auth" ]] || [[ $1 = "admin_auth" ]] || [[ $1 = "pete_auth" ]]; then
   echo "You've selected boilerplate: $1"
   mkdir -p "$HOME/pete_boilerplate_tmp"
   mv "$1" "$HOME/pete_boilerplate_tmp/$1"
+  mv rename "$HOME/pete_boilerplate_tmp/$1"
   cd ..
   rm -rf "$PETE_BOILERPLATE_CURRENT_DIR"
   mv "$HOME/pete_boilerplate_tmp/$1" .
